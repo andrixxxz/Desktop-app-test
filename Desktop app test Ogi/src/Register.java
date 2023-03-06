@@ -75,8 +75,8 @@ public class Register {
  // Jauni mainīgie, kas nelielasās datubāzē ja tiek likti iekš insert funkcijas
 //         String petname = petNameInput.getText();
 //         String tips = petTypeInput.getText();
-         String age = petAgeInput.getText();
-         int age2 = Integer.parseInt(age);
+//         String age = petAgeInput.getText();
+//         int age2 = Integer.parseInt(age);
 //         String symptoms = petIllnessInput.getText();
 
 
@@ -84,19 +84,26 @@ public class Register {
              @Override
              public void actionPerformed(ActionEvent e) {
                  try {
-                     DB.insert2(petNameInput.getText(),petTypeInput.getText(),age2,petIllnessInput.getText());
+                     DB.insert2(petNameInput.getText(),petTypeInput.getText(),petAgeInput.getText(),petIllnessInput.getText());
                  } catch (SQLException ex) {
                      throw new RuntimeException(ex);
                  }
                  label2.setText("Dati saglabāti");
+                 petNameInput.setText("");
+                 petTypeInput.setText("");
+                 petAgeInput.setText("");
+                 petIllnessInput.setText("");
+
 
              }
          });
 
+
         cancelButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            label2.setText("Dati saglabāti");
+
+                frame.dispose();
             }
         });
 
