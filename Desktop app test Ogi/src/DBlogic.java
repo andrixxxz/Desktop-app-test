@@ -7,10 +7,10 @@ public class DBlogic {
 
     String DB = "jdbc:mysql://localhost:3306/java_db";
     String USER = "root";
-    String PASS = "?";
+    String PASS = "Pikmens123";
 
     // method - insert, connection, insert
-    public void insert2(String name, String type, int age, String symptoms) throws SQLException {
+    public void insert2(String name, String type, String age, String symptoms) throws SQLException {
         Connection conn = DriverManager.getConnection(DB, USER, PASS);
         Statement stmt = conn.createStatement();
 
