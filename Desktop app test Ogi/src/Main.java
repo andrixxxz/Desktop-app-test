@@ -12,10 +12,8 @@ public class Main {
 
 
 
-
-
-       LaunchPage launchpage = new LaunchPage();
-
+//       LaunchPage launchpage = new LaunchPage();
+        LoginPage loginPage = new LoginPage();
 
     }
 }

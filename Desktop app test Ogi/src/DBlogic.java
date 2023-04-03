@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -13,6 +14,11 @@ public class DBlogic {
     public void insert2(String name, String type, String age, String symptoms) throws SQLException {
         Connection conn = DriverManager.getConnection(DB, USER, PASS);
         Statement stmt = conn.createStatement();
+
+        if (name.isEmpty() || type.isEmpty() || age.isEmpty() || symptoms.isEmpty()) {
+            JOptionPane.showMessageDialog(null,"aizpildi laukus", "kļūda", JOptionPane.WARNING_MESSAGE );
+            return;
+        }
 
         String sql = "INSERT INTO dzivnieki (name, type, age, symptoms) VALUES ('"+ name +"','"+type+"','"+age+"','"+symptoms+"')";
 
